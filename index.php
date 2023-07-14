@@ -19,6 +19,7 @@
                 </h2>
             <?php foreach ($products as $product) { ?>
                 <div class="card col-3 p-0 m-3" >
+                    <div class="availability <?php if($product->checkAvailability()){echo 'avaible';}else{echo 'unavaible';}; ?>"></div>
                     <div class="card-header">
                         <?php echo $product->category->name; ?> <br>
                         <?php echo $product->type; ?>

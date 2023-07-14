@@ -10,7 +10,11 @@ class ProductType extends Product{
         $this->avaibleFrom = $avaibleFrom;
     }
 
-    public function getSynopsis(Int $length){
-        return substr($this->content, 0, $length);
+    public function checkAvailability(){
+        if(new DateTime() >= $this->avaibleFrom){
+            return true;
+        }
+        return false;
+
     }
 }
