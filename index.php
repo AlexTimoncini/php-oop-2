@@ -20,13 +20,20 @@
             <?php foreach ($products as $product) { ?>
                 <div class="card col-3 p-0 m-3" >
                     <div class="card-header">
-                        <?php echo $product->category->name; ?>
+                        <?php echo $product->category->name; ?> <br>
+                        <?php echo $product->type; ?>
                     </div>
-                    <img src="<?php echo $product->image ?>"  class="card-img-top rounded-0" alt="<?php echo $product->product; ?>">
+                    <img src="<?php echo $product->image ?>"  class="card-img-top rounded-0 mt-2" alt="<?php echo $product->product; ?>">
                     <div class="card-body p-3">
                         <h5 class="card-title">
                             <?php echo $product->product; ?>
                         </h5>
+                        <h6 class="card-subtitle">
+                            <?php echo $product->price; ?>
+                        </h6>
+                        <p class="card-subtitle py-2">
+                            <?php echo $product->avaibleFrom->format('F jS, Y'); ?>
+                        </p>
                         <a href="#" class="btn btn-primary">
                             Shop Now
                         </a>
