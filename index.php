@@ -24,19 +24,32 @@
                         <?php echo $product->category->name; ?> <br>
                         <?php echo $product->type; ?>
                     </div>
-                    <img src="<?php echo $product->image ?>"  class="card-img-top rounded-0 mt-2" alt="<?php echo $product->product; ?>">
+                    <img src="<?php echo $product->image ?>" class="card-img-top rounded-0 mt-2" alt="<?php echo $product->product; ?>">
                     <div class="card-body p-3">
                         <h5 class="card-title">
                             <?php echo $product->product; ?>
                         </h5>
-                        <h6 class="card-subtitle">
+                        <h6 class="card-subtitle pt-2">
                             <?php echo $product->price; ?>
                         </h6>
-                        <p class="card-subtitle py-2">
-                            <?php echo $product->quantity; ?>
-                             pz remaning
+                        <p class="card-subtitle py-1">
+                            <?php echo strval($product->quantity); ?>
+                            pz remaning
                         </p>
-                        <p class="card-subtitle py-2">
+                        <?php if($product instanceof Food){?>
+                            <p class="card-subtitle py-1">
+                                <?php echo $product->expiryDate->format('d-m-Y'); ?>
+                            </p>
+                        <?php }else if($product instanceof Collar){?>
+                            <p class="card-subtitle py-1">
+                                <?php echo $product->size; ?>
+                            </p>
+                        <?php }else if($product instanceof Kennel){?>
+                            <p class="card-subtitle py-1">
+                                <?php echo $product->material; ?>
+                            </p>
+                        <?php }?>
+                        <p class="card-subtitle">
                             <?php echo $product->magazine; ?> - 
                             <?php echo $product->room; ?> - 
                             <?php echo $product->box; ?>
