@@ -4,19 +4,19 @@ include_once __DIR__ . '/../classes/PositionTrait.php';
 class ProductType extends Product{
     use MagazinePosition;
     public $type;
-    public $avaibleFrom;
+    public $quantity;
 
-    function __construct( String $product, String $price, String $image, Category $category, String $type, DateTime $avaibleFrom, String $magazine, String $room, String $box,){
+    function __construct( String $product, String $price, String $image, Category $category, String $type, Int $quantity, String $magazine, String $room, String $box,){
         parent::__construct($product, $price, $image, $category);
         $this->type = $type;
-        $this->avaibleFrom = $avaibleFrom;
+        $this->quantity = $quantity;
         $this->magazine = $magazine;
         $this->room = $room;
         $this->box = $box;
     }
 
     public function checkAvailability(){
-        if(new DateTime() >= $this->avaibleFrom){
+        if($this->quantity > 0){
             return true;
         }
         return false;

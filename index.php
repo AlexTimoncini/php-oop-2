@@ -33,7 +33,8 @@
                             <?php echo $product->price; ?>
                         </h6>
                         <p class="card-subtitle py-2">
-                            <?php echo $product->avaibleFrom->format('F jS, Y'); ?>
+                            <?php echo $product->quantity; ?>
+                             pz remaning
                         </p>
                         <p class="card-subtitle py-2">
                             <?php echo $product->magazine; ?> - 
