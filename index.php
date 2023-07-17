@@ -35,6 +35,11 @@
                         <p class="card-subtitle py-2">
                             <?php echo $product->avaibleFrom->format('F jS, Y'); ?>
                         </p>
+                        <p class="card-subtitle py-2">
+                            <?php echo $product->magazine; ?> - 
+                            <?php echo $product->room; ?> - 
+                            <?php echo $product->box; ?>
+                        </p>
                         <a href="#" class="btn btn-primary">
                             Shop Now
                         </a>
